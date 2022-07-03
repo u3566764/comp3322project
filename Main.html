@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ques</title>
+    <style>
+		leftBar{
+			width:20em;
+		}
+		
+		header{
+			
+		}
+		
+    </style>
+  </head>
+  <body>
+  <header id = 'header'>
+  <!--<script src = ""header.js">   </script>-->
+		<div id = 'ques'> ques<div>
+		<div id = 'Home'> Home<div>
+		<div id = 'Hot'> Hot<div>
+		<form id="searchform" action="search.php" method="get">
+		<p>
+		<label for="search">Search:</label>
+		<input type="text" id="search" name="search" maxlength="50">
+		</p>
+		<input class="bttn" type="submit" value="Submit">
+		</form>
+		
+		<a href = "Login.html">
+		<div id = 'LogIn'> Log in<div>
+		</a>
+		<a href = "Register.html">
+		<div id = 'Register'> Register<div>
+		</a>
+  </header>
+  <leftBar>
+	<!--<script src = ""leftbar.js">   </script>-->
+		<a href = "Main.html?space=Algorithm">
+		<div id = 'Algorithm'> Algorithm<div>
+		</a>
+		
+		<div id = 'MachineLearning'> Machine Learning<div>
+		<div id = 'System'> System<div>
+		<div id = 'JavaScript'> JavaScript<div>
+  </leftbar>
+	<!--<form id="questionForm" action="question.php" method="get">
+	-->
+ 
+	<?php include "question.php"; ?>
+    <script>
+	window.onload = function() {
+		showAll();
+	}
+		
+	var btn_home = document.getElementById("Home");
+	btn_home.addEventListener('click', showAll);
+		
+	var btn_hot = document.getElementById("Hot");
+	btn_hot.addEventListener('click', showAll);
+	
+	var btn_hot = document.getElementById("Hot");
+	btn_hot.addEventListener('click', showAll);
+
+	var btn_hot = document.getElementById("Hot");
+	btn_hot.addEventListener('click', showAll);
+
+	var btn_hot = document.getElementById("Hot");
+	btn_hot.addEventListener('click', showAll);
+
+	var btn_hot = document.getElementById("Hot");
+	btn_hot.addEventListener('click', showAll);	
+	
+	function showAll(){
+		var xmlhttp = new XMLHttpRequest();
+		
+		xmlhttp.onreadystatechange = function(){
+			if (xmlhttp.readyState == 4 && xmlhttp.status ==200){
+				var mesgs = document.getElementById("entries");
+				mesgs.innerHTML = xmlhttp.responseText;
+			}
+		}
+		
+		xmlhttp.open("POST", "question.php",true);
+		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xmlhttp.send("space=all");
+	}
+	
+	</script>
+  </body>
+</html>
